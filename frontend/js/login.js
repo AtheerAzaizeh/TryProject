@@ -1,9 +1,12 @@
+const loginForm = document.getElementById('login-form');
+const emailinput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+
 document.getElementById('login-form').addEventListener('submit', async (e) => {
     e.preventDefault();
-    
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    
+    const email = emailinput.value.trim();
+    const password = passwordInput.value.trim();
+   
     try {
       const response = await fetch('http://localhost:3000/api/users/login', {
         method: 'POST',
@@ -16,13 +19,13 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
       }
   
       const { token, role, user_id } = await response.json();
-  
+      sessionStorage.setItem('token', token);
+      sessionStorage.setItem('user_id', user_id);
+      
       if (role === 'worker') {
-        sessionStorage.setItem('token', token);  // Store token for authenticated requests
-        window.location.href = 'cv.html';  // Ensure this path is correct
+        window.location.href = 'cv.html';  
       } else {
-        sessionStorage.setItem('token', token);
-        window.location.href = 'dashboard.html';  // Ensure this path is correct
+        window.location.href = 'dashboard.html'; 
       }
     } catch (error) {
       console.error('Error:', error);
