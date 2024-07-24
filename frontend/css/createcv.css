@@ -373,3 +373,16 @@ main .sections .section .content-section textarea {
 .use-template button:hover {
     background-color: #1AA179;
 }
+
+button {
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+  
+  button[type="button"]:hover {
+    background-color: darkblue;
+  }
+  
