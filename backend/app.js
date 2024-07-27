@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
-const env = require('./config/env');
 const cors = require('cors');
 var bodyParser = require('body-parser');
-const port = 8080;
+
+require('dotenv').config();
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(bodyParser.json({limit: '50mb'}));
@@ -17,6 +18,6 @@ app.use('/api/cvs', cvRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/all-jobs' , alljobsRoutes);
 
-app.listen(port, '0.0.0.0', () => {
-  console.log(`Server running on http://localhost:${port}`);
-});
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});  
