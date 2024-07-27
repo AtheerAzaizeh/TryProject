@@ -16,6 +16,6 @@ app.use('/api/cvs', cvRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/all-jobs' , alljobsRoutes);
 
-app.listen(env.PORT || 3000, () => {
+app.listen(env.PORT || 8080, () => {
   console.log(`Server is running on port ${env.PORT || 3000}`);
 });
