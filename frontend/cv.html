@@ -40,7 +40,7 @@
                     </div>
                     <input type="file" id="photoInput" style="display:none;" >
                 </div>
-                <form id="cv-form">
+                <form id="cv-form" action="/api/cvs" method="post" enctype="multipart/form-data">
                     <!-- Personal Details Section -->
                     <h2>
                         Personal Details
@@ -67,7 +67,7 @@
                         <button type="button" id="arrow-down" data-section="education-section">▼</button>
                     </h2>
                     <div id="education-section" style="display: none;">
-                        <label for="country">Country:</label>
+                        <label for="country">Country Of Study:</label>
                         <select id="country" name="country" required></select><br>
                         <label for="institution_name">Institution Name:</label>
                         <select id="institution_name" name="institution_name" required></select><br>
