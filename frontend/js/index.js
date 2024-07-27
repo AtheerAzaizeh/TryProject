@@ -1,17 +1,38 @@
-document.addEventListener('DOMContentLoaded', async () => {
-    const jobList = document.getElementById('job-list');
-    const response = await fetch('/api/workers');
-    const workers = await response.json();
-    
-    jobList.innerHTML = workers.map(worker => `
-      <div class="worker">
-        <img src="${worker.worker_image}" alt="${worker.job_title}">
-        <h3>${worker.job_title}</h3>
-        <p>Location: ${worker.location}</p>
-        <p>Age: ${worker.age}</p>
-        <p>Years of Experience: ${worker.years_of_experience}</p>
-        <p>Rating: ${worker.rating}</p>
-      </div>
-    `).join('');
-  });
+document.addEventListener('DOMContentLoaded', function() {
+  const jobList = document.getElementById('job-list');
+
+  async function fetchAndExtractJobData() {
+    try {
+      const response = await fetch('https://jobicy.com/api/v2/remote-jobs?count=50&geo=israel'); 
+      const data = await response.json();
   
+      const jobList = data.jobs.map(job => ({
+        jobTitle: job.jobTitle,
+        companyName: job.companyName
+      }));
+  
+      displayJobs(jobList);
+    } catch (error) {
+      console.error('Error fetching job data:', error);
+    }
+  }
+
+  function displayJobs(jobs) {
+    if (jobs.length === 0) {
+      jobList.innerHTML = '<p>No jobs available at the moment.</p>';
+      return;
+    }
+
+    jobs.forEach(job => {
+      const jobItem = document.createElement('div');
+      jobItem.classList.add('job-item');
+      jobItem.innerHTML = `
+        <h3>${job.jobTitle}</h3>
+        <p><strong>Company:</strong> ${job.companyName}</p>
+      `;
+      jobList.appendChild(jobItem);
+    });
+  }
+
+  fetchAndExtractJobData();
+});
