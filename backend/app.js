@@ -1,35 +1,21 @@
 const express = require('express');
 const app = express();
 const env = require('./config/env');
-const db = require('./config/db');
 const cors = require('cors');
+var bodyParser = require('body-parser');
 
 app.use(cors());
-app.use(express.json());
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 const cvRoutes = require('./routes/cvRoutes');
 const userRoutes = require('./routes/userRoutes');
-const workerRoutes = require('./routes/workerRoutes');
+const alljobsRoutes = require('./routes/alljobsRoutes');
 
 app.use('/api/cvs', cvRoutes);
 app.use('/api/users', userRoutes);
-app.use('/api/workers', workerRoutes);
+app.use('/api/all-jobs' , alljobsRoutes);
 
-const axios = require('axios');
-
-
-const fetchUniversityNames = async () => {
-  try {
-    const response = await axios.get('http://universities.hipolabs.com/search?country=jordan');
-    const universities = response.data;
-    const universityNames = universities.map(university => university.name);
-    console.log('List of university names:', universityNames);
-  } catch (error) {
-    console.error('Error fetching universities:', error);
-  }
-};
-
-fetchUniversityNames();
 app.listen(env.PORT || 3000, () => {
   console.log(`Server is running on port ${env.PORT || 3000}`);
 });
