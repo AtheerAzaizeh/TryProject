@@ -1,0 +1,922 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styling */
+body {
+    background-color: #E9ECEF;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 90px;
+    background-color: white;
+}
+
+/* Menu styling */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+}
+
+#menuicon {
+    margin: 20px auto;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    cursor: pointer;
+}
+
+#menuicon .line {
+    width: 30px;
+    height: 3px;
+    background-color: #2C0B0E;
+    transition: all 0.3 ease;
+    left: 0;
+    position: absolute;
+}
+#menuicon div:first-child{
+    top: 0;
+}
+#menuicon div:nth-child(2){
+    top : 8px;
+}
+#menuicon div:last-child{
+    top: 16px;
+}
+#menuicon:hover div:nth-child(2){
+    opacity: 0 ;
+}
+#menuicon:hover div:first-child ,
+#menuicon:hover div:last-child{
+    top: 6px;
+    background-color: #20C997;
+}
+#menuicon:hover div:first-child{
+    transform: rotate(45deg);
+}
+#menuicon:hover div:last-child{
+    transform:rotate(-45deg);
+}
+/* Logo styling */
+@keyframes logoanimation {
+    from{
+        transform: rotate3d(0, 0, 0, 0);
+    }
+    to{
+        transform: rotate3d(0, 1, 0, 360deg);
+    }
+}
+#logo:hover{
+    animation-play-state: paused;
+}
+#logo {
+    cursor: pointer;
+    margin-left: 25px;
+    animation: logoanimation 5s linear infinite;
+}
+
+/* Profile picture styling */
+#pictureprofile {
+    padding-right: 10px;
+    display: flex;
+}
+
+/* Arrow styling */
+#arrow-down {
+    margin-top: 15px;
+    padding: 5px;
+}
+
+#arrow {
+    width: 0;
+    height: 0;
+    margin-left: 8px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid black;
+}
+
+/* Online indicator */
+#online {
+    background-color: #629C44;
+    border-radius: 50%;
+    width: 13px;
+    height: 13px;
+    margin-top: 27px;
+    margin-left: 58px;
+    position: absolute;
+}
+
+/* Main content styling */
+main {
+    text-align: center;
+}
+:root{
+    --main-color:rgb(0, 0, 0 / 80%);
+}
+.welcom{
+    text-align: center;
+    margin: 10px auto;
+    font-size: 16px;
+    font-family: 'Aleo';
+    font-weight: bold;
+    color: var(--main-color);
+    border-right:2px solid var(--main-color);
+    overflow: hidden;
+    white-space: nowrap;
+    animation: control-width 1s steps(30) 1s both;
+}
+
+@keyframes control-width{
+    from{
+        width: 0px;
+    }
+    to{
+        width: 94%;
+    }
+}
+.modal p {
+    text-align: center;
+    margin: 10px auto;
+    font-size: 16px;
+    font-family: 'Aleo';
+    font-weight: bold;
+    color: var(--main-color);
+    border-right:2px solid var(--main-color);
+    overflow: hidden;
+    white-space: nowrap;
+    animation: control-width 1s steps(30) 1s both;
+}
+@keyframes control-width{
+    from{
+        width: 0px;
+    }
+    to{
+        width: 100%;
+    }
+}
+/* Jobs section styling */
+#jobs {
+    width: 100%;
+    height: 160px;
+}
+
+menu {
+    height: 88px;
+}
+
+#headerjobs {
+    background-color: #D2F4EA;
+    border: solid #D2F4EA;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 27px;
+}
+
+#menujobs {
+    text-align: left;
+    justify-content: center;
+    padding: 8px;
+    background-color: #A6E9D5;
+}
+
+ol {
+    list-style-type: none;
+}
+
+li {
+    font-size: 13px;
+    padding: 8px;
+}
+
+li:hover {
+    background-color: #A6E9D5;
+}
+
+li a {
+    float: right;
+}
+
+#footerjobs {
+    background-color: #D2F4EA;
+    border: solid #D2F4EA;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 27px;
+}
+
+#footerjobs a {
+    font-size: 14px;
+}
+
+#instructions {
+    margin-top: 10%;
+}
+#instructions div {
+    width: 81px;
+    height: 77px;
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+    margin: 7px;
+    border: solid white;
+    border-radius: 20px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+#instructions img {
+    margin-bottom: 12px;
+}
+
+/* Footer styling */
+footer {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFFF;
+}
+
+footer div {
+    text-align: center;
+    display: inline-block;
+    margin: 10px 30px 0px 30px;
+}
+
+span {
+    display: block;
+}
+
+/* Page-menu main styling */
+.Arrowleft {
+    float: left;
+    margin-left: 10px;
+    margin-top: 5px;
+    width: 21px;
+    height: 24px;
+    transition: width 2s , height 2s , transform 2s;
+}
+.Arrowleft:hover {
+    width: 25px;
+    height: 28px;
+    transform: rotate(360deg);
+}
+
+#titlemenu {
+    position: absolute;
+    margin-top: 36px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    height: 29px;
+}
+
+#alljobs {
+    border: solid 1px #20C997;
+    background-color: #20C997;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 50%;
+    height: 29px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#jobsforyou {
+    border: solid 1px white;
+    background-color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 50%;
+    height: 29px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#search {
+    position: absolute;
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+#searchjob {
+    width: 75%;
+    height: 28px;
+    border: solid 1px white;
+    border-radius: 32px;
+    background-color: white;
+    text-align: center;
+}
+
+#logosearch {
+    float: left;
+    margin: 5px;
+}
+
+#searchajob {
+    text-align: center;
+    margin-top: 4px;
+}
+
+#filterjob {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 25px;
+}
+
+#filterjob .bar01 {
+    width: 24px;
+    height: 3px;
+    background-color: black;
+    margin: 3px 0;
+    border-radius: 2px;
+}
+
+#filterjob .bar02 {
+    width: 12px;
+    height: 3px;
+    background-color: black;
+    margin: 3px 0;
+    border-radius: 2px;
+}
+
+#filterjob .bar03 {
+    width: 6px;
+    height: 3px;
+    background-color: black;
+    margin: 3px 0;
+    border-radius: 2px;
+}
+
+#listmenu {
+    background-color: white;
+    position: absolute;
+    margin-top: 116px;
+    width: 100%;
+    text-align: left;
+    height: 100%;
+    overflow-y: scroll;
+    border-right: 1px solid #ccc;
+}
+
+.btndel {
+    float: right;
+    margin-right: 15px;
+    background-color: white;
+    border: solid 0px;
+}
+
+#listmenu li {
+    margin-bottom: 14px;
+}
+
+.btnarrowright {
+    float: right;
+    margin-right: 5px;
+    margin-left: 35px;
+    margin-top: 4px;
+}
+
+#addbutton {
+    float: right;
+    margin-left: 13px;
+    margin-top: 5px;
+}
+
+#addjobs {
+    display: none;
+    text-align: left;
+    margin: 5px 10px;
+}
+#addjobs div {
+    margin-bottom: 0.5%;
+}
+
+#addjobs h3 {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Helvetica;
+}
+
+.fullname {
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+input {
+    border: solid 0px;
+    width: 99%;
+    height: 35px;
+    text-align: center;
+    justify-content: center;
+}
+
+.fullname input {
+    border: solid 0px;
+    width: 49.15%;
+    height: 35px;
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.typeworks {
+    display: inline-block;
+    width: 99%;
+    text-align: left;
+}
+
+.typeworks h3 {
+    width: 100%;
+}
+
+.typeworks span, .timework span {
+    align-items: center;
+    display: inline-flex;
+    margin: 0px 7px;
+    font-weight: normal;
+    font-size: 16px;
+    font-family: Helvetica;
+}
+.timework{
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.typeworks input, .timework input {
+    width: 15px;
+}
+
+#btnsubmit {
+    margin-left: 25%;
+    width: 50%;
+    background-color: #20C997;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Helvetica;
+}
+
+/* Sidebar styling */
+#sidebar {
+    height: 100%;
+    width: 209px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #FFFF;
+    color: black;
+    transition: 0.5s;
+    z-index: 1;
+    display: none;
+}
+
+.headersidebar {
+    background-color: #20C997;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 209px;
+    height: 60px;
+}
+
+.headersidebar .searchicon {
+    position: absolute;
+    margin-left: 20px;
+    color: #0a0b0c;
+}
+
+.headersidebar input {
+    width: 153px;
+    height: 22px;
+    border: solid 0px;
+    border-radius: 32px;
+    margin-left: 10px;
+}
+
+.headersidebar #exit-icon {
+    margin-right: 8px;
+}
+
+.profile {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    width: 59px;
+    height: 59px;
+    border-radius: 50%;
+}
+
+.profile-name {
+    font-size: 18px;
+    margin: 10px 0 5px;
+    color: #1AA179;
+    font-style: Aleo;
+}
+
+.profile-email {
+    color: #888;
+    font-size: 14px;
+}
+
+.sidebarmenu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sidebarmenu ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    width: 193px;
+}
+
+.sidebarmenu ul li a {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+.sidebarmenu ul li a i {
+    color: #0a0b0c;
+    width: 29px;
+    margin-right: 8px;
+}
+.sidebarmenu ul li a:hover {
+    color: #20C997;
+}
+.homeicon {
+    background-color: #A6E9D5;
+    font-weight: bold;
+    border-radius: 10px;
+    float: left;
+}
+.footersidebarmenu {
+    margin-top: 60px;
+}
+#exit-icon {
+    cursor: pointer;
+    font-size: 1rem;
+    float: right;
+}
+/* End of sidebar styling */
+/* Start jobsview styling */
+
+/* Styling section includejobs */
+#includejobs{
+   position: absolute;
+   margin-top: 65px;
+   width: 100%;
+}
+#titlethejob{
+    width: 100%;
+    height: 40px;
+    background-color: #D2F4EA;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-family: Helvetica;
+    font-weight: bold;
+    color: #0a0b0c;
+}
+#timeago{
+    margin-left: 18px;
+    margin-top: 11px;
+    float: left;
+    font-size: 14px;
+    font-family: Helvetica;
+    font-weight:normal;
+    color: #6C757D;
+}
+#location-salary{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    font-size: 15px;
+    font-family: Helvetica;
+    font-weight: normal;
+    margin:44px 8px 0px 12px;
+}
+#positionoverview , #requirements{
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 18px 26px 8px ;
+    line-height: 1.3;
+    font-size: 15px;
+    font-family: Helvetica;
+    font-weight: normal;
+}
+#positionoverview h2 , #requirements h2{
+    margin-bottom: 13px;
+    font-size: 14px;
+    font-family: Helvetica;
+    font-weight: bold;
+    color: #0a0b0c;
+}
+#sendcv button{
+    cursor: pointer;
+    width: 120px;
+    height: 32px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); 
+    transition: box-shadow 0.3s ease;
+    border: 0px;
+    font-size: 14px;
+    font-family: Helvetica;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 0px 10px;
+    background-color: #D2F4EA;
+    float: right;
+    margin: 0px 30px 12px 0px;
+}
+#sendcv button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.35);
+}
+/* start of trash icon styling */
+.trash-box {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    float: right;
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .trash-box:hover .trash-top {
+    transform: translate(-50%, -15%) rotate(-20deg); /* open the lid */
+  }
+  
+  .trash-box:hover .trash-btm {
+    transform: translate(-50%, -100%) rotate(5deg); /* rotate the bottom a little */
+  }
+  
+  .trash-box:hover .trash {
+    top: 50%;
+    transform: translate(-42%, -50%) rotate(35deg); /* comes from bottom */
+  }
+  
+  .trash-box .trash-top {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -15%);
+    width: 80%;
+    height: 15%;
+    background: #000000;
+    border-radius: 5px;
+    transform-origin: left bottom;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .trash-box .trash-top::before {
+    content: "";
+    position: absolute;
+    bottom: 95%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 30%;
+    height: 80%;
+    background: inherit;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .trash-box .trash-btm {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 70%;
+    height: 65%;
+    background: #000000;
+    border-radius: 5px;
+    transform-origin: left 70%; 
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .trash-box .trash-btm .trash-lines {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 80%;
+    display: flex;
+    justify-content: space-around; 
+  }
+  
+  .trash-box .trash-btm .trash-lines .trash-line {
+    width: 20%;
+    height: 100%;
+    background: #ffffff;
+    border-radius: 3px;
+  }
+  
+  .trash-box .trash {
+    position: absolute;
+    top: 80%;
+    left: 38%;
+    transform: translate(-38%, -80%) rotate(35deg);
+    width: 40%;
+    height: 40%;
+    background: #000000;
+    border-radius: 2px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .trash-box .trash::before {
+    position: absolute;
+    transform: translate(30%, -20%) rotate(25deg);
+    width: 100%;
+    height: 100%;
+    background: #c6e9f1; 
+    border-radius: 2px;
+  }
+  
+/*start modal-content in menupage styling*/
+#successModal {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 0px;
+    border: 1px solid #888;
+    width: 70%;
+    height: 25%;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+    margin-right: 18px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* start of modal styling in jobsview page */
+  #modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border: 0px solid #888;
+    border-radius: 10px;
+    width: 285px;
+    height: 212px;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 15%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .circle-check {
+    background-color: #4CAF50;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  
+  .circle-check i {
+    color: white;
+    font-size: 32px;
+  }
+  
+  .modal-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .modal-text {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .modal-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 120px;
+    height: 32px;
+    border-radius: 5px;
+  }
+  
+  .modal-button:hover {
+    background-color: #45a049;
+  }
+  
+/* styling for media screen */
+@media  screen and (min-width: 640px) {
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        padding: 0;
+        margin:0;
+    }
+    #jobs {
+        width: 100%;
+        height: 160px;
+        margin-top: 50px;
+    }
+    p {
+        text-align: center;
+        margin: 30px;
+        font-size: 22px;
+    }
+    menu{
+        height: 183px;
+    }
+    #instructions div {
+        width: 81px;
+        height: 77px;
+        background-color: white;
+        display: inline-block;
+        margin: 7px 25px;
+        border: solid white;
+        border-radius: 20px;
+        padding: 8px;
+    }
+}
